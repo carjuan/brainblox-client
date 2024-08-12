@@ -1,0 +1,55 @@
+@use "sass:math";
+
+$font-base: 16;
+
+/// Converts a pixel value to rem units.
+///
+/// @param {integer (unitless)} $px
+///   The pixel value to be converted.
+/// @param {number} $base
+///   The base font size in pixels. Defaults to $font-base.
+/// @return {number}
+///   The equivalent value in rem units.
+///
+/// @example scss - rem function
+///   .element {
+///     font-size: rem(32); // Converts 32px to 2rem
+///   }
+///
+/// @throw Throws an error if the $px value is not unitless.
+@function rem($px, $base: $font-base) {
+  @if not math.is-unitless($px) {
+    @error "The value #{$px} must have no units. Remove '#{math.unit($px)}' from '#{$px}'";
+  }
+
+  $value: math.div($px, 16);
+  $length: $value * 1rem;
+
+  @return #{$length};
+}
+
+/// Converts a pixel value to em units.
+///
+/// @param {integer (unitless)} $px
+///   The pixel value to be converted.
+/// @param {number} $base
+///   The base font size in pixels. Defaults to $font-base.
+/// @return {number}
+///   The equivalent value in em units.
+///
+/// @example scss - em function
+///   .element {
+///     font-size: em(32); // Converts 32px to 2em
+///   }
+///
+/// @throw Throws an error if the $px value is not unitless.
+@function em($px, $base: $font-base) {
+  @if not math.is-unitless($px) {
+    @error "The value #{$px} must have no units. Remove '#{math.unit($px)}' from '#{$px}'";
+  }
+
+  $value: math.div($px, 16);
+  $length: $value * 1em;
+
+  @return #{$length};
+}

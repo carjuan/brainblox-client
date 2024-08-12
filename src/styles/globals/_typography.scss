@@ -1,0 +1,21 @@
+@use '../util' as u;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titan+One&display=swap');
+
+:root {
+  --ff-primary: 'Nunito', sans-serif;
+  --ff-secondary: 'Titan One', sans-serif;
+
+  --fw-regular: 400;
+  --fw-semi: 600;
+  --fw-bold: 800;
+
+  --fs-700: '1.5rem';
+  --fs-500: '0.875rem';
+  --fs-300: '0.75rem';
+}
+
+h1 {
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-regular);
+}

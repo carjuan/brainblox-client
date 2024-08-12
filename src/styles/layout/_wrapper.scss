@@ -1,0 +1,9 @@
+@use '../util' as u;
+@use '../globals/variables' as v;
+
+.wrapper {
+  width: min(100% - #{u.rem(64)}, #{u.rem(v.$content-max-width)});
+  margin-inline: auto;
+  padding-block-start: u.rem(32);
+  padding-block-end: u.rem(16);
+}
