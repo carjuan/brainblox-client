@@ -1,9 +1,10 @@
 :root {
   // RAW
-  --clr-dark-700: #001219;
-  --clr-dark-200: #303030;
-  --clr-dark-50: #e9d8a6;
-  --clr-orange-400: #ee9b00;
+  --clr-dark-700: hsla(196.8, 100%, 4.9%, 1);
+  --clr-dark-500: hsla(0, 0%, 51.4%, 0.29);
+  --clr-dark-200: hsla(0, 0%, 18.8%, 1);
+  --clr-dark-50: hsla(44.8, 60.4%, 78.2%, 1);
+  --clr-orange-400: hsla(39.1, 100%, 46.7%, 1);
 
   // BRAINBLOX PRIMARY
   --clr-bb-dark: var(--clr-dark-700);
