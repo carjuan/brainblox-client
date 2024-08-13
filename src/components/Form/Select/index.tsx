@@ -14,7 +14,9 @@ export default function Select({ workspaces }: HeaderProps.Workspaces) {
   };
 
   const onBlur = (event: React.FocusEvent<HTMLInputElement, HTMLElement>) => {
-    const { relatedTarget } = event;
+    const {
+      relatedTarget,
+    }: { relatedTarget: (EventTarget & HTMLElement) | null } = event;
 
     if (relatedTarget?.classList.contains('option__btn')) {
       setSelectedOption(relatedTarget.textContent);
