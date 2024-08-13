@@ -10,7 +10,6 @@ export default function Select({ workspaces }: HeaderProps.Workspaces) {
   const dropdownRef = useRef(null);
 
   const isFocus = (event: React.FocusEvent<HTMLInputElement, HTMLElement>) => {
-    console.log('input gained focus ', event);
     setDropdownIsOpen((wasOpen) => !wasOpen);
   };
 
@@ -25,7 +24,6 @@ export default function Select({ workspaces }: HeaderProps.Workspaces) {
     setDropdownIsOpen((wasOpen) => !wasOpen);
   };
 
-  console.log(selectedOption);
   return (
     <div className="select">
       <span className="select__aria-describe" id="select-describe">
