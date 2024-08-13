@@ -1,7 +1,6 @@
 @mixin vertical-items($xg: 0, $yg: 0) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: $xg $yg;
+  row-gap: $xg;
+  column-gap: $yg;
 }

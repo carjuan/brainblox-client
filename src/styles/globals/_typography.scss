@@ -10,12 +10,13 @@
   --fw-semi: 600;
   --fw-bold: 800;
 
-  --fs-700: '1.5rem';
-  --fs-500: '0.875rem';
-  --fs-300: '0.75rem';
+  --fs-400: 1.2rem;
+  --fs-320: 0.8rem;
+  --fs-300: 0.5rem;
+
+  --ff-body: normal var(--fw-regular) var(--fs-400) var(--ff-primary);
 }
 
-h1 {
-  font-family: var(--ff-secondary);
-  font-weight: var(--fw-regular);
+body {
+  font: var(--ff-body);
 }
