@@ -9,7 +9,7 @@ export default function Select({ workspaces }: HeaderProps.Workspaces) {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const isFocus = (event: React.FocusEvent<HTMLInputElement, HTMLElement>) => {
+  const isFocus = () => {
     setDropdownIsOpen((wasOpen) => !wasOpen);
   };
 
