@@ -1,0 +1,52 @@
+@use '../../../styles/util' as u;
+@use '../../../styles/globals/variables' as gv;
+.select {
+  --bg: var(--clr-bb-dark);
+  --caret: var(--clr-bb-highlight);
+  --border: 2px solid var(--clr-bb-light);
+  --px: #{u.rem(2)};
+  --py: #{u.rem(8)};
+  @include u.vertical-items(u.rem(8));
+
+  &__wrapper {
+    max-width: u.rem(220);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    border: var(--border);
+    border-radius: gv.$border-radius;
+    background-color: var(--bg);
+    padding-inline: var(--px);
+    padding-block: var(--py);
+  }
+
+  &__selected-option {
+    padding-inline: var(--px);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  &__dropdown {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
+
+  &__input {
+    border: transparent;
+    border-width: 0;
+    width: 100%;
+    background-color: transparent;
+    caret-color: var(--caret);
+    outline: none;
+    color: var(--clr-txt-light);
+  }
+
+  &__options {
+    padding-block: var(--py);
+    background-color: var(--bg);
+    width: min-content;
+    white-space: nowrap;
+    border: var(--border);
+    border-radius: gv.$border-radius;
+  }
+}

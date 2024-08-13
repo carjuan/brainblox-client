@@ -1,0 +1,19 @@
+{
+  "workspaces": [
+    {
+      "id": "1",
+      "name": "Notes",
+      "notes": []
+    },
+    {
+      "id": "2",
+      "name": "Health",
+      "notes": []
+    },
+    {
+      "id": "3",
+      "name": "Work and Travelling",
+      "notes": []
+    }
+  ]
+}
