@@ -1,0 +1,40 @@
+@use '../../styles/util' as u;
+.notes-button {
+  &__btn {
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: u.rem(16);
+    border: none;
+    background-color: var(--clr-bb-light);
+    border-radius: 50%;
+  }
+
+  &__add-icon {
+    $notes-button: &;
+    display: block;
+    overflow: visible;
+  }
+
+  &__add-path {
+    $ap: &;
+    stroke: var(--clr-bb-dark);
+    transform-origin: center;
+    transition:
+      rotate 0.4s cubic-bezier(0.45, 0.58, 0.29, 1.3),
+      opacity 0.2s ease 0.1s;
+
+    &--vertical-animate {
+      @extend #{$ap};
+      rotate: 270deg;
+    }
+
+    &--horizontal-animate {
+      @extend #{$ap};
+      transition: rotate 0.5s cubic-bezier(0.45, 0.58, 0.29, 1.3);
+      rotate: 270deg;
+      opacity: 0;
+    }
+  }
+}

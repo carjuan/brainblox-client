@@ -1,0 +1,9 @@
+.menu {
+  position: relative;
+  min-height: 60px;
+  background-color: var(--clr-bb-dark);
+
+  &__wrapper {
+    height: 100%;
+  }
+}

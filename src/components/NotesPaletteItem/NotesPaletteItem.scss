@@ -1,0 +1,31 @@
+@use '../../styles/util' as u;
+
+.palette-item {
+  $pi: &;
+  width: u.rem(64);
+  height: u.rem(64);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  &--ocean {
+    @extend #{$pi};
+    background-color: var(--clr-ocean-blue);
+  }
+  &--teal {
+    @extend #{$pi};
+    background-color: var(--clr-teal-lagoon);
+  }
+  &--mint {
+    @extend #{$pi};
+    background-color: var(--clr-mint-whisper);
+  }
+  &--sand {
+    @extend #{$pi};
+    background-color: var(--clr-dark-50);
+  }
+  &--golden {
+    @extend #{$pi};
+    background-color: var(--clr-golden-glow);
+  }
+}
