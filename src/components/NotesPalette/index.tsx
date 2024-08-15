@@ -2,12 +2,12 @@ import './NotesPalette.scss';
 import NotesPaletteItem from '../NotesPaletteItem';
 
 interface NotesPaletteProps {
-  isHidden: boolean;
+  isOpen: boolean;
 }
 
-export default function NotesPalette({ isHidden }: NotesPaletteProps) {
+export default function NotesPalette({ isOpen }: NotesPaletteProps) {
   return (
-    <div className={`notes-palette${isHidden ? '--hidden' : ''}`}>
+    <div className={`notes-palette${!isOpen ? '--hidden' : ''}`}>
       <NotesPaletteItem variant="ocean" />
       <NotesPaletteItem variant="teal" />
       <NotesPaletteItem variant="mint" />
