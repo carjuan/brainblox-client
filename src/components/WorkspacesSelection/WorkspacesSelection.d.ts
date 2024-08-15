@@ -1,4 +1,4 @@
-declare namespace HeaderProps {
+declare namespace WorkspacesSelectProps {
   export interface Workspaces {
     workspaces: Array<Workspace>;
   }
@@ -19,4 +19,4 @@ declare namespace HeaderProps {
   }
 }
 
-export default HeaderProps;
+export default WorkspacesSelectProps;

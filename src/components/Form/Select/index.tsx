@@ -1,9 +1,11 @@
 import './Select.scss';
 import { useState, useRef } from 'react';
 import Option from '../Option';
-import type HeaderProps from '../../Header/Header.d.ts';
+import type WorkspacesSelectProps from '../../WorkspacesSelection/WorkspacesSelection.d.ts';
 
-export default function Select({ workspaces }: HeaderProps.Workspaces) {
+export default function Select({
+  workspaces,
+}: WorkspacesSelectProps.Workspaces) {
   const [selectedOption, setSelectedOption] = useState<null | string>('Notes');
   const [searchValue, setSearchValue] = useState<string>('');
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
@@ -55,7 +57,7 @@ export default function Select({ workspaces }: HeaderProps.Workspaces) {
       {dropdownIsOpen && (
         <div className="select__options">
           <ul ref={dropdownRef} className="select__options-list">
-            {workspaces.map(({ id, name }: HeaderProps.Workspace) => (
+            {workspaces.map(({ id, name }: WorkspacesSelectProps.Workspace) => (
               <Option key={id} name={name} />
             ))}
           </ul>
