@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <h1 className="visually-hidden">brainblox</h1>
-      <main className="wrapper">
+      <main>
         <Routes>
           <Route path="/" element={<Workspace workspaces={workspaces} />} />
           <Route

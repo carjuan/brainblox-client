@@ -11,4 +11,8 @@
     var(--s) var(--s),
     calc(var(--s) / 5) calc(var(--s) / 5);
   color: var(--clr-txt-light);
+
+  & main {
+    height: 100%;
+  }
 }
