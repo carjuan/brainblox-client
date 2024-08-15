@@ -1,0 +1,7 @@
+@use '../util' as u;
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: var(--clr-bb-light);
+  border: 2px solid var(--clr-bb-dark);
+}

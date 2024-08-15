@@ -5,6 +5,11 @@
   --clr-dark-200: hsla(0, 0%, 18.8%, 1);
   --clr-dark-50: hsla(44.8, 60.4%, 78.2%, 1);
   --clr-orange-400: hsla(39.1, 100%, 46.7%, 1);
+  --clr-ocean-blue: #005f73;
+  --clr-ocean-light: hsl(196.6, 66.2%, 13.9%);
+  --clr-teal-lagoon: #0a9396;
+  --clr-mint-whisper: #94d2bd;
+  --clr-golden-glow: #ee9b00;
 
   // BRAINBLOX PRIMARY
   --clr-bb-dark: var(--clr-dark-700);
@@ -22,6 +27,7 @@
   // BACKGROUND
   --clr-bg-main: var(--clr-bb-pattern-grid);
   --clr-bg-option-select: var(--clr-dark-500);
+  --clr-bg-palette-options: var(--clr-ocean-light);
 
   // TEXT
   --clr-txt-dark: var(--clr-bb-dark);

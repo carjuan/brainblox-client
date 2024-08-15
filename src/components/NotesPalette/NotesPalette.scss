@@ -1,0 +1,46 @@
+@use '../../styles/util' as u;
+.notes-palette {
+  $np: &;
+  $_items-row-gap: u.rem(8);
+  --palette-items-row-gap: #{u.rem(8)};
+
+  // adjust this number to your requirements if adding another <NotesPaletteItem /> component
+  --number-of-notes: 5;
+
+  --notes-palette-item-height: 64px;
+  --base-height: calc(
+    var(--notes-palette-item-height) * var(--number-of-notes)
+  );
+  --palette-radius: #{u.rem(50)};
+  --pelette-items-row-gap: #{u.rem(8)};
+  --palette-height: calc(
+    var(--notes-palette-item-height) * var(--number-of-notes) +
+      var(--palette-items-row-gap) * 4 + 16px
+  );
+  --palette-timing-function: cubic-bezier(0.45, 0.58, 0.69, 1.58);
+  position: absolute;
+  left: 50%;
+  width: min-content;
+  top: calc((0px - var(--base-height)) - 145%);
+  max-height: var(--palette-height);
+  padding-block: u.rem(8);
+  padding-inline: u.rem(4);
+  background-color: var(--clr-bg-palette-options);
+  transform: translateX(-50%);
+  border-top-left-radius: 50px;
+  border-top-right-radius: var(--palette-radius);
+  border-bottom-left-radius: var(--palette-radius);
+  border-bottom-right-radius: var(--palette-radius);
+  transition:
+    max-height 0.5s var(--palette-timing-function),
+    top 0.5s var(--palette-timing-function),
+    opacity 0.4s var(--palette-timing-function);
+  @include u.vertical-items(#{$_items-row-gap});
+  &--hidden {
+    @extend #{$np};
+    max-height: 0;
+    top: -40%;
+    overflow: hidden;
+    opacity: 0;
+  }
+}
