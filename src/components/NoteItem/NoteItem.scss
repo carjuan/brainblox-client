@@ -1,0 +1,76 @@
+@use '../../styles/util' as u;
+@use '../../styles/globals/variables' as gv;
+
+.note {
+  $note: &;
+  min-height: u.rem(120);
+  border-radius: gv.$border-radius;
+  @include u.breakpoint(small) {
+    max-width: u.rem(340);
+  }
+
+  & .ql-picker-label::before {
+    color: var(--clr-bb-dark);
+    font-weight: bold;
+  }
+
+  & .ql-toolbar,
+  &,
+  & .ql-container {
+    border: none;
+  }
+
+  & svg {
+    border: none;
+  }
+
+  & .ql-stroke {
+    stroke: var(--clr-bb-white);
+  }
+
+  & .ql-picker-label::before {
+    color: var(--clr-bb-light);
+  }
+
+  & .ql-container {
+    border-top: 2px solid var(--clr-bb-white);
+    height: auto;
+  }
+
+  &--ocean {
+    @extend #{$note};
+    background-color: var(--clr-ocean-blue);
+  }
+
+  &--teal {
+    @extend #{$note};
+    background-color: var(--clr-teal-lagoon);
+  }
+
+  &--mint {
+    @extend #{$note};
+    background-color: var(--clr-mint-whisper);
+    color: var(--clr-bb-dark);
+    & .ql-picker-label::before {
+      color: var(--clr-bb-dark);
+    }
+  }
+
+  &--sand {
+    @extend #{$note};
+    background-color: var(--clr-dark-50);
+    color: var(--clr-bb-dark);
+    & .ql-picker-label::before {
+      color: var(--clr-bb-dark);
+    }
+  }
+
+  &--golden {
+    @extend #{$note};
+    background-color: var(--clr-golden-glow);
+    color: var(--clr-bb-dark);
+    & .ql-picker-label::before {
+      color: var(--clr-bb-dark);
+    }
+  }
+}
