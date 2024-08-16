@@ -1,0 +1,12 @@
+@use '../../styles/util' as u;
+.canvas {
+  flex: 1;
+  &__wrapper {
+    margin-block-end: u.rem(40);
+  }
+  &__notes {
+    display: grid;
+    gap: u.rem(8);
+    grid-template-rows: auto;
+  }
+}

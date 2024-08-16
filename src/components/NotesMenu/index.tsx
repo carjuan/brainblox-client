@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export default function NotesMenu() {
   const [isPaletteOpen, setIsPaletteOpen] = useState<boolean>(false);
-
   const togglePalette = (isOpen: boolean): boolean => !isOpen;
 
   const togglePaletteMenu = () => {
@@ -16,7 +15,10 @@ export default function NotesMenu() {
     <section className="menu">
       <h2 className="visually-hidden">Notes Menu</h2>
       <div className="menu__wrapper">
-        <NotesPalette isOpen={isPaletteOpen} />
+        <NotesPalette
+          togglePalette={togglePaletteMenu}
+          isOpen={isPaletteOpen}
+        />
         <NotesPaletteToggler
           shouldAnimate={isPaletteOpen}
           togglePalette={togglePaletteMenu}

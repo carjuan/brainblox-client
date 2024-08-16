@@ -23,6 +23,7 @@
   &--sand {
     @extend #{$pi};
     background-color: var(--clr-dark-50);
+    color: black;
   }
   &--golden {
     @extend #{$pi};
