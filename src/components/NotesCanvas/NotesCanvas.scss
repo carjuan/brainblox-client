@@ -3,10 +3,9 @@
   flex: 1;
   &__wrapper {
     margin-block-end: u.rem(40);
+    height: 100%;
   }
   &__notes {
-    display: grid;
-    gap: u.rem(8);
-    grid-template-rows: auto;
+    height: 100%;
   }
 }
