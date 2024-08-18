@@ -1,0 +1,32 @@
+@use '../../styles/util' as u;
+@use '../../styles/globals/variables' as gv;
+
+.header {
+  background-color: var(--clr-bb-dark);
+
+  &__wrapper {
+    padding-block: u.rem(24);
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 0 u.rem(16);
+  }
+
+  &__btn {
+    border-radius: gv.$border-radius;
+    padding-inline: u.rem(24);
+    padding-block: u.rem(4);
+    transition: box-shadow 0.3s ease-in-out;
+    font: var(--ff-buttons);
+
+    &:hover {
+      box-shadow: 2px 2px 0px 0px var(--clr-bb-highlight);
+    }
+  }
+}

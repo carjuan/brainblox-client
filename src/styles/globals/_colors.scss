@@ -3,6 +3,7 @@
   --clr-dark-700: hsla(196.8, 100%, 4.9%, 1);
   --clr-dark-500: hsla(0, 0%, 51.4%, 0.29);
   --clr-dark-200: hsla(0, 0%, 18.8%, 1);
+  --clr-dark-100: hsl(44.6, 23.4%, 67.3%);
   --clr-dark-50: hsla(44.8, 60.4%, 78.2%, 1);
   --clr-dark-10: hsl(0, 0%, 100%);
   --clr-orange-400: hsla(39.1, 100%, 46.7%, 1);
@@ -30,6 +31,7 @@
   --clr-bg-main: var(--clr-bb-pattern-grid);
   --clr-bg-option-select: var(--clr-dark-500);
   --clr-bg-palette-options: var(--clr-ocean-light);
+  --clr-bg-button-hover: var(--clr-dark-100);
 
   // TEXT
   --clr-txt-dark: var(--clr-bb-dark);
