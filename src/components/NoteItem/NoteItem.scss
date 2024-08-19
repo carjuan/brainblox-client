@@ -58,7 +58,7 @@
 
   &--sand {
     @extend #{$note};
-    background-color: var(--clr-dark-50);
+    background-color: var(--clr-sand);
     color: var(--clr-bb-dark);
     & .ql-picker-label::before {
       color: var(--clr-bb-dark);

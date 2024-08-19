@@ -21,4 +21,12 @@
     color: var(--clr-bb-light);
     cursor: pointer;
   }
+
+  &__icon-path {
+    fill: var(--clr-bg-menu-icon);
+  }
+
+  &__search-icon {
+    stroke: var(--clr-bg-menu-icon);
+  }
 }

@@ -11,6 +11,7 @@
   --clr-ocean-light: hsl(196.6, 66.2%, 13.9%);
   --clr-teal-lagoon: hsl(181.3, 87.5%, 31.4%);
   --clr-mint-whisper: hsl(159.7, 40.8%, 70.2%);
+  --clr-sand: #e9d8a6;
   --clr-golden-glow: hsl(39.1, 100%, 46.7%);
 
   // BRAINBLOX PRIMARY
@@ -31,7 +32,9 @@
   --clr-bg-main: var(--clr-bb-pattern-grid);
   --clr-bg-option-select: var(--clr-dark-500);
   --clr-bg-palette-options: var(--clr-ocean-light);
-  --clr-bg-button-hover: var(--clr-dark-100);
+
+  --clr-bg-logo: var(--clr-bb-light);
+  --clr-bg-menu-icon: var(--clr-bb-light);
 
   // TEXT
   --clr-txt-dark: var(--clr-bb-dark);
@@ -39,12 +42,17 @@
   --clr-txt-highlight: var(--clr-bb-highlight);
 
   // BUTTON
+  --clr-bg-button-hover: var(--clr-dark-100);
+  --clr-bg-button: var(--clr-bb-light);
+  --clr-bg-theme-toggle: var(--clr-bb-light);
+  --clr-txt-button: var(--clr-bb-dark);
 
   // BODER
 }
 
 :root[data-theme='light'] {
   // RAW
+  --clr-dark-50: hsla(47.1, 29.2%, 90.6%, 1);
 
   // BRAINBLOX PRIMARY
   --clr-bb-dark: var(--clr-dark-50);
@@ -64,13 +72,13 @@
   --clr-bg-main: var(--clr-bb-pattern-grid);
   --clr-bg-option-select: var(--clr-dark-500);
   --clr-bg-palette-options: var(--clr-ocean-light);
-
-  // TEXT
-  --clr-txt-dark: var(--clr-bb-light);
-  --clr-txt-light: var(--clr-bb-dark);
-  --clr-txt-highlight: var(--clr-bb-highlight);
+  --clr-bg-logo: var(--clr-bb-highlight);
+  --clr-bg-menu-icon: var(--clr-bb-highlight);
+  --clr-sand: #e9d8a6;
 
   // BUTTON
+  --clr-bg-button: var(--clr-bb-highlight);
+  --clr-bg-theme-toggle: var(--clr-bb-highlight);
 
   // BODER
 }

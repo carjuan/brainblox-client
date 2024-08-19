@@ -7,6 +7,16 @@
   &__wrapper {
     padding-block: u.rem(24);
   }
+
+  &__link,
+  &__logo {
+    display: block;
+  }
+
+  &__logo-path {
+    fill: var(--clr-bg-logo);
+  }
+
   &__nav {
     display: flex;
     align-items: center;
@@ -18,12 +28,26 @@
     gap: 0 u.rem(16);
   }
 
+  &__theme-toggle {
+    color: var(--clr-bg-theme-toggle);
+    margin-left: auto;
+    margin-right: u.rem(16);
+    display: grid;
+    place-items: center;
+
+    & svg {
+      width: u.rem(32);
+      height: u.rem(32);
+    }
+  }
+
   &__btn {
     border-radius: gv.$border-radius;
     padding-inline: u.rem(24);
     padding-block: u.rem(4);
     transition: box-shadow 0.3s ease-in-out;
     font: var(--ff-buttons);
+    color: var(--clr-txt-button);
 
     &:hover {
       box-shadow: 2px 2px 0px 0px var(--clr-bb-highlight);
