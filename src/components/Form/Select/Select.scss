@@ -18,6 +18,7 @@
     background-color: var(--bg);
     padding-inline: var(--px);
     padding-block: var(--py);
+    color: var(--clr-txt-light);
   }
 
   &__selected-option {
@@ -48,5 +49,6 @@
     white-space: nowrap;
     border: var(--border);
     border-radius: gv.$border-radius;
+    color: var(--clr-txt-light);
   }
 }
