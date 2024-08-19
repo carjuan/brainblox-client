@@ -26,7 +26,7 @@ export default function NotesMenu() {
         <div className="menu__items">
           <button
             aria-label="see finished tasks and notes"
-            className="menu__btn"
+            className="menu__btn menu__btn--finished"
           >
             <svg
               role="presentation"
@@ -45,7 +45,10 @@ export default function NotesMenu() {
             </svg>
             Finished
           </button>
-          <button aria-label="search in notes" className="menu__btn">
+          <button
+            aria-label="search in notes"
+            className="menu__btn menu__btn--search"
+          >
             <svg
               role="presentation"
               aria-hidden="true"
