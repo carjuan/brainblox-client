@@ -1,5 +1,7 @@
 @charset 'utf-8';
 
+@use './styles/globals/variables' as gv;
+
 @forward './styles/globals';
 @forward './styles/layout';
 
@@ -14,7 +16,7 @@ body {
 
 #root {
   color: var(--clr-txt-light);
-  height: 100%;
+  height: calc(100% - #{gv.$header-min-height});
 
   & main {
     height: 100%;
