@@ -1,8 +1,8 @@
 import './AddItem.scss';
 
 interface AddItemProps {
-  toggle?: () => void;
-  shouldAnimate?: boolean;
+  toggle: () => void;
+  shouldAnimate: boolean;
   className?: string;
 }
 
