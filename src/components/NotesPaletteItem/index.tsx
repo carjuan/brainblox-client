@@ -1,9 +1,10 @@
 import './NotesPaletteItem.scss';
+import { v4 as uuidv4 } from 'uuid';
 import {
-  NotesContext,
+  WorkspacesContext,
   Note,
-  useNoteFactory,
-  Factory,
+  Workspace,
+  WorkspacesProviderContextValue,
 } from '../../NotesProvider';
 import { useContext } from 'react';
 
@@ -16,17 +17,40 @@ export default function NotesPaletteItem({
   togglePalette,
   variant,
 }: NotesPaletteItemProps) {
-  const ctx = useContext(NotesContext);
-  const noteFactory: Factory = useNoteFactory();
+  const { workspaces, activeWorkspaceId, setWorkspaces } =
+    useContext<WorkspacesProviderContextValue>(WorkspacesContext);
 
   return (
     <button
       onClick={() => {
+        // FIX: Move this to its own helper function ?
         const newNote: Note = {
-          noteFactory,
+          id: uuidv4(),
           color: variant,
+          content: '',
+          dataX: '0',
+          dataY: '0',
         };
-        ctx.setNotes((notes: Array<Note>): Array<Note> => [...notes, newNote]);
+
+        const _workspaces = workspaces.map(
+          (workspace: Workspace): Workspace => {
+            if (workspace.id === activeWorkspaceId) {
+              console.log(
+                'found the selected current workspace id: ',
+                workspace.id
+              );
+
+              return {
+                id: workspace.id,
+                name: workspace.name,
+                notes: [...workspace.notes, newNote],
+              };
+            }
+
+            return workspace;
+          }
+        );
+        setWorkspaces(_workspaces);
         togglePalette();
       }}
       className={`palette-item--${variant}`}

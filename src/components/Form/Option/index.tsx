@@ -1,10 +1,13 @@
 import './Option.scss';
-import type WorkspacesSelectProps from '../../WorkspacesSelection/WorkspacesSelection.d.ts';
 
-export default function Option({ name }: WorkspacesSelectProps.Option) {
+interface OptionProps {
+  name: string;
+  id: string;
+}
+export default function Option({ name, id }: OptionProps) {
   return (
     <li className="option">
-      <button tabIndex={0} className="option__btn">
+      <button data-workspace-id={id} tabIndex={0} className="option__btn">
         {name}
       </button>
       <div

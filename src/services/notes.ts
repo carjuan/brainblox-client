@@ -1,17 +1,47 @@
 import interact from 'interactjs';
+import Quill from 'quill';
 import { InteractEvent } from '@interactjs/core/InteractEvent';
-import { Note } from '../NotesProvider';
+import { Factory, Note } from '../NotesProvider';
+
+interface INote extends Note {
+  noteInstance: Quill;
+  node: HTMLDivElement | null;
+}
 
 interface INotesServices {
   makeDraggable: (noteNode: HTMLElement) => void;
   handleDragMovement: (event: InteractEvent) => void;
+  registerNote: (note: INote) => void;
+  getCurrentWorkspaceNotes: () => Array<INote>;
+  findContentById: (noteId: string) => string;
+  getNoteFactory: () => Factory;
+  disposeCurrentWorkspaceNotes: () => void;
 }
 
 class NotesServices implements INotesServices {
-  notes: Array<Note>;
-  constructor() {
+  notes: Array<INote>;
+  factory: Factory;
+
+  constructor(factory: Factory) {
     this.notes = [];
-    console.log('somebody instatiated me');
+    this.factory = factory;
+  }
+
+  getNoteFactory(): Factory {
+    return this.factory;
+  }
+
+  registerNote(note: INote) {
+    this.notes.push(note);
+  }
+
+  getCurrentWorkspaceNotes(): Array<INote> {
+    return this.notes;
+  }
+
+  findContentById(noteId: string) {
+    const note = this.notes.find((note) => note.id === noteId);
+    return note?.content as string;
   }
 
   handleDragMovement(event: InteractEvent) {
@@ -45,8 +75,12 @@ class NotesServices implements INotesServices {
       },
     });
   }
+
+  disposeCurrentWorkspaceNotes() {
+    this.notes = [];
+  }
 }
 
-const notesService = Object.freeze(new NotesServices());
+const notesService = new NotesServices(Quill);
 
 export default notesService;

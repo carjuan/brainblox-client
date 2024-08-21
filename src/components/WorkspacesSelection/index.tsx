@@ -1,12 +1,9 @@
 import Select from '../Form/Select';
-import type WorkspacesSelectProps from './WorkspacesSelection.d.ts';
 
-export default function WorkspaceSelection({
-  workspaces,
-}: WorkspacesSelectProps.Workspaces) {
+export default function WorkspaceSelection() {
   return (
     <header className="wrapper">
-      <Select workspaces={workspaces} />
+      <Select />
     </header>
   );
 }
