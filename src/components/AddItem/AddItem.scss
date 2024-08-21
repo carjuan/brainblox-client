@@ -1,4 +1,6 @@
 @use '../../styles/util' as u;
+@use '../../styles/globals/variables' as gv;
+
 .notes-button {
   &__btn {
     position: absolute;
@@ -9,6 +11,18 @@
     border: none;
     background-color: var(--clr-bg-button);
     border-radius: 50%;
+
+    &--workspaces {
+      background-color: var(--clr-bb-dark);
+      border: 2px solid var(--clr-bb-light);
+      border-radius: gv.$border-radius;
+      color: var(--clr-txt-light);
+      height: 100%;
+
+      & path {
+        stroke: var(--clr-bb-light);
+      }
+    }
   }
 
   &__add-icon {
