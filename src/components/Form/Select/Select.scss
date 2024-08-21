@@ -8,6 +8,11 @@
   --py: #{u.rem(8)};
   @include u.vertical-items(u.rem(8));
 
+  &__view-add {
+    display: flex;
+    gap: 0 u.rem(10);
+  }
+
   &__wrapper {
     max-width: u.rem(220);
     display: grid;
@@ -32,7 +37,8 @@
     grid-column: 1 / -1;
   }
 
-  &__input {
+  &__search {
+    $search: &;
     border: transparent;
     border-width: 0;
     width: 100%;
@@ -40,6 +46,23 @@
     caret-color: var(--caret);
     outline: none;
     color: var(--clr-txt-light);
+
+    &--add {
+      @extend #{$search};
+      background-color: var(--clr-bb-dark);
+      border: var(--border);
+      border-radius: gv.$border-radius;
+      max-width: 30%;
+      transition:
+        width 0.6s cubic-bezier(0.45, 0.58, 0.29, 1.3),
+        transform 0.4s cubic-bezier(0.45, 0.58, 0.29, 1.3);
+    }
+
+    &--add.hidden {
+      width: 0;
+      transform: translateX(#{u.rem(-20)});
+      z-index: -1;
+    }
   }
 
   &__options {
