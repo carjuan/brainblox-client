@@ -1,6 +1,6 @@
 import './NotesMenu.scss';
 import NotesPalette from '../NotesPalette';
-import NotesPaletteToggler from '../NotesPaletteToggler';
+import AddItem from '../AddItem';
 import { useState } from 'react';
 
 export default function NotesMenu() {
@@ -19,10 +19,7 @@ export default function NotesMenu() {
           togglePalette={togglePaletteMenu}
           isOpen={isPaletteOpen}
         />
-        <NotesPaletteToggler
-          shouldAnimate={isPaletteOpen}
-          togglePalette={togglePaletteMenu}
-        />
+        <AddItem shouldAnimate={isPaletteOpen} toggle={togglePaletteMenu} />
         <div className="menu__items">
           <button
             aria-label="see finished tasks and notes"

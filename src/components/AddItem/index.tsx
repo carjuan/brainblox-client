@@ -1,20 +1,22 @@
-import './NotesPaletteToggler.scss';
+import './AddItem.scss';
 
-interface NotesButtonProps {
-  togglePalette: () => void;
+interface AddItemProps {
+  toggle: () => void;
   shouldAnimate: boolean;
+  className?: string;
 }
 
-export default function NotesPaletteToggler({
+export default function AddItem({
   shouldAnimate,
-  togglePalette,
-}: NotesButtonProps) {
+  toggle,
+  className,
+}: AddItemProps) {
   return (
     <div className="notes-button">
       <button
-        onClick={() => togglePalette()}
+        onClick={() => toggle()}
         aria-label="open notes palette"
-        className="notes-button__btn btn"
+        className={className ? className : 'notes-button__btn btn'}
       >
         <svg
           className="notes-button__add-icon"
