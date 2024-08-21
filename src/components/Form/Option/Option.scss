@@ -3,6 +3,8 @@
 .option {
   cursor: pointer;
   padding-inline: u.rem(8);
+  display: flex;
+  justify-content: space-between;
 
   &:hover {
     background-color: var(--clr-bg-option-select);
@@ -16,6 +18,36 @@
     background-color: transparent;
     color: inherit;
     cursor: pointer;
-    width: 100%;
+  }
+
+  &__edit {
+    $edit: &;
+    display: flex;
+    align-items: center;
+    gap: 0 u.rem(8);
+
+    // FIX: This is not accessible for screen readers
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__edit-icon {
+    display: none;
+    background-color: transparent;
+    border: none;
+    vertical-align: bottom;
+    width: 24px;
+    height: 24px;
+
+    path {
+      fill: var(--clr-bb-light);
+      stroke: var(--clr-bb-dark);
+    }
+  }
+
+  // FIX: This is not accessible for screen readers
+  &:hover .btn {
+    display: block;
   }
 }
