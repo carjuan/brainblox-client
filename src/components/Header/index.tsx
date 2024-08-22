@@ -9,7 +9,7 @@ export default function Header() {
     const theme = root.getAttribute('data-theme');
 
     if (!theme) {
-      root.setAttribute('data-theme', 'dark');
+      root.setAttribute('data-theme', 'light');
       return;
     }
 
