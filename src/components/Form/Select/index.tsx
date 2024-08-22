@@ -1,17 +1,22 @@
 import './Select.scss';
-import { useState, useRef } from 'react';
+import { useState, useContext, useRef } from 'react';
 import Option from '../Option';
 import AddItem from '../../AddItem';
-import type WorkspacesSelectProps from '../../WorkspacesSelection/WorkspacesSelection.d.ts';
+import notesServices from '../../../services/notes';
+import {
+  WorkspacesProviderContextValue,
+  WorkspacesContext,
+  Workspace,
+} from '../../../NotesProvider';
 
-export default function Select({
-  workspaces,
-}: WorkspacesSelectProps.Workspaces) {
+export default function Select() {
   const [selectedOption, setSelectedOption] = useState<null | string>('Notes');
   const [searchValue, setSearchValue] = useState<string>('');
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const [shouldExpandInput, setShouldExpandInput] = useState(false);
   const dropdownRef = useRef(null);
+  const { workspaces, setWorkspaces, activeWorkspaceId, setActiveWorkspaceId } =
+    useContext<WorkspacesProviderContextValue>(WorkspacesContext);
 
   const isFocus = () => {
     setDropdownIsOpen((wasOpen) => !wasOpen);
@@ -27,8 +32,51 @@ export default function Select({
     }: { relatedTarget: (EventTarget & HTMLElement) | null } = event;
 
     if (relatedTarget?.classList.contains('option__btn')) {
-      setSelectedOption(relatedTarget.textContent);
+      const workspaceName = relatedTarget.textContent;
+      const selectedWorkspaceId = relatedTarget.dataset.workspaceId;
+      setSelectedOption(workspaceName);
       setSearchValue('');
+
+      // lets find the workspace that was selected first
+      const _workspaces = workspaces.map((workspace: Workspace): Workspace => {
+        // I found the new selected workspace
+        if (workspace.id === activeWorkspaceId) {
+          // lets check the new notes here;
+          const newNotes = notesServices
+            .getCurrentWorkspaceNotes()
+            .map((note) => {
+              const noteXPosition = note.node?.dataset.x;
+              const noteYPosition = note.node?.dataset.y;
+              console.log(
+                'notes new positions: ',
+                noteXPosition,
+                noteYPosition
+              );
+              return {
+                id: note.id,
+                color: note.color,
+                content: note.noteInstance.getContents(),
+                dataX: noteXPosition,
+                dataY: noteYPosition,
+              };
+            });
+
+          return {
+            id: workspace.id,
+            name: workspace.name,
+            notes: newNotes,
+          };
+        }
+        return workspace;
+      });
+
+      setWorkspaces(_workspaces);
+      // NOTE: this sets a new workspaceId and call react.setState and change the context value
+      setActiveWorkspaceId(selectedWorkspaceId as string);
+
+      // NOTE: Makes sure that there not active currentActiveWorkspace notes in notesServices
+      // to save and manage next workspaceId notes in canvas
+      notesServices.disposeCurrentWorkspaceNotes();
     }
 
     setDropdownIsOpen((wasOpen) => !wasOpen);
@@ -78,9 +126,9 @@ export default function Select({
       {dropdownIsOpen && (
         <div className="select__options">
           <ul ref={dropdownRef} className="select__options-list">
-            {workspaces.map(({ id, name }: WorkspacesSelectProps.Workspace) => (
-              <Option key={id} name={name} />
-            ))}
+            {workspaces.map(({ id, name }: Workspace) => {
+              return <Option key={id} id={id} name={name} />;
+            })}
           </ul>
         </div>
       )}

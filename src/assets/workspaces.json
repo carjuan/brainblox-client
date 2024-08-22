@@ -1,0 +1,109 @@
+{
+  "workspaces": [
+    {
+      "id": "6dc0e94e-9938-484b-9e22-e112e328ce7b",
+      "name": "Notes",
+      "notes": [
+        {
+          "id": "5dc15f48-98d9-4d7c-84bf-566bea5ba891",
+          "color": "golden",
+          "content": "Buy groceries"
+        },
+        {
+          "id": "b090b911-58dd-4bc2-ae4a-66e2df3cf785",
+          "color": "sand",
+          "content": "Call the bank"
+        },
+        {
+          "id": "41389344-7d1d-4b2d-b977-81b7eabafab3",
+          "color": "mint",
+          "content": "Schedule dentist appointment"
+        }
+      ]
+    },
+    {
+      "id": "bf65d994-9cf2-4047-8fa7-6bf6643fe29b",
+      "name": "Work",
+      "notes": [
+        {
+          "id": "ef383c22-8ef7-4a8f-8ed2-04c65bfdb9e5",
+          "color": "teal",
+          "content": "Finish project report"
+        },
+        {
+          "id": "d0110286-39ae-44bc-add2-f3b9cf9d29e7",
+          "color": "ocean",
+          "content": "Prepare presentation for meeting"
+        },
+        {
+          "id": "e95ef913-9f83-4906-b756-b62ff28dbd54",
+          "color": "golden",
+          "content": "Review client feedback"
+        }
+      ]
+    },
+    {
+      "id": "306ea899-4bb8-4447-80c3-71eeaff0df69",
+      "name": "Study",
+      "notes": [
+        {
+          "id": "70ad8d90-0065-4a30-a829-34fbc2fe5b5f",
+          "color": "mint",
+          "content": "Read chapter 5 of the textbook"
+        },
+        {
+          "id": "9c042ef4-a055-490d-8ef5-7368fe72b926",
+          "color": "sand",
+          "content": "Complete math homework"
+        },
+        {
+          "id": "6908b5d6-9d1a-43c8-8872-b9345a316826",
+          "color": "teal",
+          "content": "Watch lecture videos"
+        }
+      ]
+    },
+    {
+      "id": "70ab2b1d-67fb-4429-b214-38a042c6caf4",
+      "name": "Fitness",
+      "notes": [
+        {
+          "id": "2a6c92b8-38cc-4306-8a30-51fa9b62c41b",
+          "color": "ocean",
+          "content": "Run 5km"
+        },
+        {
+          "id": "8a80c51b-2afe-48d6-9fba-2fe8eb89bc9c",
+          "color": "golden",
+          "content": "Join yoga class"
+        },
+        {
+          "id": "180a383e-7148-435b-ac88-2e25656a7455",
+          "color": "mint",
+          "content": "Track daily calorie intake"
+        }
+      ]
+    },
+    {
+      "id": "8bb66d90-541f-4ffc-b5aa-c02fc4965901",
+      "name": "Travel",
+      "notes": [
+        {
+          "id": "36fe3719-cdb3-41b2-9f46-3f3762584cf5",
+          "color": "sand",
+          "content": "Book flight tickets"
+        },
+        {
+          "id": "4b0e5537-8c80-4a18-9a6d-68a331564647",
+          "color": "teal",
+          "content": "Research hotels"
+        },
+        {
+          "id": "9fc9764a-a63d-4ba1-9852-0eff2036e723",
+          "color": "ocean",
+          "content": "Plan itinerary"
+        }
+      ]
+    }
+  ]
+}

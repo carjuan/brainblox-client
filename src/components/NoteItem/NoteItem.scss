@@ -5,6 +5,7 @@
   $note: &;
   min-height: u.rem(120);
   border-radius: gv.$border-radius;
+  position: absolute;
   @include u.breakpoint(small) {
     max-width: u.rem(340);
   }

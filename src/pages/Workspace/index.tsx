@@ -3,13 +3,10 @@ import WorkspaceSelection from '../../components/WorkspacesSelection';
 import NotesCanvas from '../../components/NotesCanvas';
 import NotesMenu from '../../components/NotesMenu';
 import appTour from '../../lib/appTour.ts';
-import type WorkspacesSelectProps from '../../components/WorkspacesSelection/WorkspacesSelection.d.ts';
 import { NotesProvider } from '../../NotesProvider';
 import { useEffect, useRef } from 'react';
 
-export default function Workspace({
-  workspaces,
-}: WorkspacesSelectProps.Workspaces) {
+export default function Workspace() {
   const workspaceRef = useRef(null);
 
   useEffect(() => {
@@ -73,7 +70,7 @@ export default function Workspace({
       <h2 className="visually-hidden">workspaces</h2>
       <div className="workspace__wrapper">
         <NotesProvider>
-          <WorkspaceSelection workspaces={workspaces} />
+          <WorkspaceSelection />
           <NotesCanvas />
           <NotesMenu />
         </NotesProvider>
