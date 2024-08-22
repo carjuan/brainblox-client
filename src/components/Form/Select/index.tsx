@@ -3,6 +3,7 @@ import { useState, useContext, useRef } from 'react';
 import Option from '../Option';
 import AddItem from '../../AddItem';
 import notesServices from '../../../services/notes';
+import { v4 as uuidv4 } from 'uuid';
 import {
   WorkspacesProviderContextValue,
   WorkspacesContext,
@@ -14,6 +15,7 @@ export default function Select() {
   const [searchValue, setSearchValue] = useState<string>('');
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const [shouldExpandInput, setShouldExpandInput] = useState(false);
+  const [addWorkspaceContent, setAddWorkspaceContent] = useState('');
   const dropdownRef = useRef(null);
   const { workspaces, setWorkspaces, activeWorkspaceId, setActiveWorkspaceId } =
     useContext<WorkspacesProviderContextValue>(WorkspacesContext);
@@ -24,6 +26,7 @@ export default function Select() {
 
   const toggleAddInput = () => {
     setShouldExpandInput((wasAddInput) => !wasAddInput);
+    setAddWorkspaceContent('');
   };
 
   const onBlur = (event: React.FocusEvent<HTMLInputElement, HTMLElement>) => {
@@ -120,7 +123,31 @@ export default function Select() {
               ? 'select__search--add'
               : 'select__search--add hidden'
           }
+          placeholder="Add a workspace"
+          onChange={(event) => {
+            setAddWorkspaceContent(event.target.value);
+          }}
           type="text"
+          data-value={addWorkspaceContent}
+          value={addWorkspaceContent}
+          onKeyDown={(event) => {
+            if (event.code === 'Enter') {
+              // setWorkspaces([...workspaces, {
+              //   id: uuidv4(),
+              //   name:
+              // }])
+              setShouldExpandInput((wasAddInput) => !wasAddInput);
+              setWorkspaces([
+                ...workspaces,
+                {
+                  id: uuidv4(),
+                  name: event.target.dataset.value,
+                  notes: [],
+                },
+              ]);
+              return;
+            }
+          }}
         />
       </div>
       {dropdownIsOpen && (
