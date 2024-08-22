@@ -1,6 +1,7 @@
 @use '../../styles/util' as u;
 .canvas {
   flex: 1;
+  position: relative;
   &__wrapper {
     margin-block-end: u.rem(40);
     height: 100%;
