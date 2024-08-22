@@ -23,6 +23,7 @@
   --clr-bb-coffe: var(--clr-dark-200);
   --clr-bb-highlight: var(--clr-orange-400);
   --clr-bb-white: var(--clr-dark-10);
+  --clr-super-white: var(--clr-bb-dark);
 
   //PATTERNS
   --_g: #0000 90deg, var(--clr-bb-coffe) 0;
@@ -63,6 +64,8 @@
   --clr-bb-coffe: var(--clr-dark-150);
   --clr-bb-highlight: var(--clr-orange-400);
   --clr-bb-white: var(--clr-dark-700);
+  // FIX: This is not good
+  --clr-super-white: white;
 
   // BACKGROUND
   --clr-bg-main: var(--clr-bb-pattern-grid);
@@ -75,6 +78,4 @@
   // BUTTON
   --clr-bg-button: var(--clr-bb-highlight);
   --clr-bg-theme-toggle: var(--clr-bb-highlight);
-
-  // BODER
 }
