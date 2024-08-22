@@ -41,28 +41,48 @@
   &--ocean {
     @extend #{$note};
     background-color: var(--clr-ocean-blue);
+    color: white;
+    & .ql-picker-label::before {
+      color: white;
+    }
+    & .ql-stroke {
+      stroke: white;
+    }
   }
 
   &--teal {
     @extend #{$note};
     background-color: var(--clr-teal-lagoon);
+    color: white;
+    & .ql-picker-label::before {
+      color: white;
+    }
+    & .ql-stroke {
+      stroke: white;
+    }
   }
 
   &--mint {
     @extend #{$note};
     background-color: var(--clr-mint-whisper);
-    color: var(--clr-bb-dark);
+    color: black;
     & .ql-picker-label::before {
-      color: var(--clr-bb-dark);
+      color: black;
+    }
+    & .ql-stroke {
+      stroke: black;
     }
   }
 
   &--sand {
     @extend #{$note};
     background-color: var(--clr-sand);
-    color: var(--clr-bb-dark);
+    color: black;
     & .ql-picker-label::before {
-      color: var(--clr-bb-dark);
+      color: black;
+    }
+    & .ql-stroke {
+      stroke: black;
     }
   }
 
